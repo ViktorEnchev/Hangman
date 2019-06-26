@@ -21,7 +21,7 @@ public class NetworkHandler extends AsyncTask {
     private JSONObject urlParams;
     private URL url;
 
-    NetworkHandler(JSONObject urlParams, URL url) {
+    public NetworkHandler(JSONObject urlParams, URL url) {
         this.urlParams = urlParams;
         this.url = url;
     }

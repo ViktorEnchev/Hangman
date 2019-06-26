@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.game.hangman.MainActivity"
+            android:name="com.example.game.hangman.activity.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -26,14 +26,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.game.hangman.LoginActivity"
+            android:name="com.example.game.hangman.activity.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.game.hangman.RegisterActivity"
+            android:name="com.example.game.hangman.activity.RegisterActivity"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.example.game.hangman.LobbyActivity"></activity>
+        <activity android:name="com.example.game.hangman.activity.LobbyActivity"></activity>
+        <activity
+            android:name="com.example.game.hangman.activity.LoginFailedActivity"
+            android:label="@string/title_activity_login_failed"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.game.hangman.activity.RegisterFailedActivity"
+            android:label="@string/title_activity_register_failed"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.game.hangman.activity.WinGameActivity"
+            android:label="@string/title_activity_win_game"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.game.hangman.activity.LooseGameActivity"
+            android:label="@string/title_activity_loose_game"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.game.hangman.activity.NewGameActivity"
+            android:label="@string/title_activity_new_game"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

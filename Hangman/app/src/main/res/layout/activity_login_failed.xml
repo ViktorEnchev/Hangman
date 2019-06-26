@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.game.hangman.activity.RegisterActivity">
+    tools:context="com.example.game.hangman.activity.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,10 +13,10 @@
         android:weightSum="1">
 
         <TextView
-            android:id="@+id/registerTextView"
+            android:id="@+id/loginFailedTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Please Register"
+            android:text="Please Login"
             android:textAlignment="center"
             android:textSize="36sp"
             android:textStyle="bold" />
@@ -24,12 +24,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:orientation="vertical"
+            android:gravity="center"
             android:weightSum="1">
 
             <EditText
-                android:id="@+id/regUsernameRegister"
+                android:id="@+id/loginUsernameLoginFailed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -38,7 +38,7 @@
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/regPasswordRegister"
+                android:id="@+id/loginPasswordLoginFailed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -46,13 +46,23 @@
                 android:inputType="textPassword"
                 android:textSize="24sp" />
 
-            <Button
-                android:id="@+id/btnRegister"
+            <TextView
+                android:id="@+id/loginIncorrectText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Register"
+                android:gravity="center"
+                android:text="username doesn't exist or password is incorect"
+                android:textColor="#E91E63"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btnLoginFailed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
                 android:textSize="24sp" />
 
         </LinearLayout>
+
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.game.hangman.LoginActivity">
+    tools:context="com.example.game.hangman.activity.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,60 +13,45 @@
         android:weightSum="1">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/loginTextView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:text="Please Log in"
+            android:layout_height="wrap_content"
+            android:text="Please Login"
             android:textAlignment="center"
             android:textSize="36sp"
-            android:textStyle="bold"
-            android:layout_weight="0.12" />
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="153dp"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:weightSum="1">
 
             <EditText
-                android:id="@+id/loginUsername"
+                android:id="@+id/loginUsernameLogin"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.09"
+                android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="username"
                 android:inputType="textPersonName"
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/loginPassword"
+                android:id="@+id/loginPasswordLogin"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.09"
+                android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="password"
                 android:inputType="textPassword"
                 android:textSize="24sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.45"
-            android:orientation="vertical">
 
             <Button
-                android:id="@+id/btnLogin3"
+                android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Log in"
-                android:textSize="30sp" />
-
-            <Button
-                android:id="@+id/btnRegister3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Register"
-                android:textSize="30sp" />
+                android:text="Login"
+                android:textSize="24sp" />
 
         </LinearLayout>
 

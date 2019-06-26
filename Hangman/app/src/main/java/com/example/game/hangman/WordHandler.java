@@ -16,7 +16,7 @@ import java.net.URL;
 public class WordHandler extends AsyncTask {
     private URL url;
 
-    WordHandler(URL url) {
+    public WordHandler(URL url) {
         this.url = url;
     }
 

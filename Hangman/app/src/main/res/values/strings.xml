@@ -18,4 +18,9 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_main_game">MainGameActivity</string>
+    <string name="title_activity_register_failed">RegisterFailedActivity</string>
+    <string name="title_activity_login_failed">LoginFailedActivity</string>
+    <string name="title_activity_win_game">WinGameActivity</string>
+    <string name="title_activity_loose_game">LooseGameActivity</string>
+    <string name="title_activity_new_game">NewGameActivity</string>
 </resources>

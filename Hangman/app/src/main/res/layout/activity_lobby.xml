@@ -4,23 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.game.hangman.LobbyActivity">
+    tools:context="com.example.game.hangman.activity.LobbyActivity">
 
     <GridView
         android:id="@+id/letters"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
+        android:layout_marginBottom="52dp"
         android:background="#FF000000"
         android:horizontalSpacing="5dp"
         android:numColumns="7"
         android:padding="5dp"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="5dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="52dp" />
+        android:verticalSpacing="5dp" />
 
     <ImageView
         android:id="@+id/imageView2"

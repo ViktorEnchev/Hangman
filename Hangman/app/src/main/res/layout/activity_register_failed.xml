@@ -13,7 +13,7 @@
         android:weightSum="1">
 
         <TextView
-            android:id="@+id/registerTextView"
+            android:id="@+id/registerFailedTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Please Register"
@@ -29,25 +29,35 @@
             android:weightSum="1">
 
             <EditText
-                android:id="@+id/regUsernameRegister"
+                android:id="@+id/regUsernameRegisterFailed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.02"
                 android:ems="10"
                 android:hint="username"
                 android:inputType="textPersonName"
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/regPasswordRegister"
+                android:id="@+id/regPasswordRegisterFailed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.02"
                 android:ems="10"
                 android:hint="password"
                 android:inputType="textPassword"
                 android:textSize="24sp" />
 
+            <TextView
+                android:id="@+id/registerUsernameExists"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="username already exists"
+                android:textColor="#E91E63"
+                android:textSize="18sp" />
+
             <Button
-                android:id="@+id/btnRegister"
+                android:id="@+id/btnRegisterFailed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Register"
