@@ -29,7 +29,6 @@ public class LobbyActivity extends AppCompatActivity {
     private LetterAdapter ltrAdapt;
 
     private String word;
-    private Random rand;
     private LinearLayout wordLayout;
     private TextView[] charViews;
 
@@ -71,7 +70,7 @@ public class LobbyActivity extends AppCompatActivity {
         AsyncTask taskResult = wordHandler.execute(ObjectTmp);
         try {
             Object result = taskResult.get();
-            word = result.toString().toLowerCase();
+            word = result.toString().toUpperCase();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -99,7 +98,7 @@ public class LobbyActivity extends AppCompatActivity {
 
             charViews[c].setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
             charViews[c].setGravity(Gravity.CENTER);
-            charViews[c].setTextColor(Color.WHITE);
+            charViews[c].setTextColor(charViews[c].getTextColors().withAlpha(0));
             charViews[c].setBackgroundResource(R.drawable.letter_bg);
             wordLayout.addView(charViews[c]);
 
@@ -108,62 +107,41 @@ public class LobbyActivity extends AppCompatActivity {
     }
 
     public void letterPressed(View view) {
-        String ltr=((TextView)view).getText().toString().toLowerCase();
+        String ltr=((TextView)view).getText().toString();
         char letterChar = ltr.charAt(0);
         view.setEnabled(false);
-        view.setBackgroundResource(R.drawable.letter_down);
+        view.setVisibility(View.GONE);
 
         boolean correct = false;
         for(int k = 0; k < word.length(); k++) {
             if(word.charAt(k)==letterChar){
                 correct = true;
                 correctCharsNum++;
-                charViews[k].setTextColor(Color.BLACK);
+                charViews[k].setTextColor(Color.WHITE);
             }
         }
 
         if (correct) {
             if (correctCharsNum == wordCharsNum) {
                 disableBtns();
-
-//                AlertDialog.Builder winBuild = new AlertDialog.Builder(this);
-//                winBuild.setTitle("YAY");
-//                winBuild.setMessage("You win!\n\nThe answer was:\n\n"+word);
-//
-//                winBuild.setNegativeButton("Exit",
-//                        new DialogInterface.OnClickListener() {
-//                            public void onClick(DialogInterface dialog, int id) {
-//                                LobbyActivity.this.finish();
-//                            }});
-//
-//                winBuild.show();
                 Intent intent = new Intent(LobbyActivity.this, WinGameActivity.class);
                 intent.putExtra("answer", word);
                 startActivity(intent);
                 finish();
             }
-        } else if (currentPart < bodyPartsNum) {
-            bodyParts[currentPart].setVisibility(View.VISIBLE);
-            currentPart++;
         } else {
-            disableBtns();
-
-//            AlertDialog.Builder loseBuild = new AlertDialog.Builder(this);
-//            loseBuild.setTitle("OOPS");
-//            loseBuild.setMessage("You lose!\n\nThe answer was:\n\n"+word);
-//
-//            loseBuild.setNegativeButton("Exit",
-//                    new DialogInterface.OnClickListener() {
-//                        public void onClick(DialogInterface dialog, int id) {
-//                            LobbyActivity.this.finish();
-//                        }});
-//
-//            loseBuild.show();
-            Intent intent = new Intent(LobbyActivity.this, LooseGameActivity.class);
-            intent.putExtra("answer", word);
-            startActivity(intent);
-            finish();
-        }
+            if (currentPart < bodyPartsNum) {
+                bodyParts[currentPart].setVisibility(View.VISIBLE);
+                currentPart++;
+            }
+            if (currentPart == bodyPartsNum){
+                disableBtns();
+                Intent intent = new Intent(LobbyActivity.this, LooseGameActivity.class);
+                intent.putExtra("answer", word);
+                startActivity(intent);
+                finish();
+                }
+            }
     }
 
     public void disableBtns() {

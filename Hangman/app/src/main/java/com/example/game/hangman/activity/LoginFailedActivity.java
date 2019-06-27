@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.game.hangman.NetworkHandler;
 import com.example.game.hangman.R;
@@ -17,10 +18,15 @@ import java.net.URL;
 
 public class LoginFailedActivity extends AppCompatActivity {
 
+    private TextView text;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_failed);
+
+        text = (TextView) findViewById(R.id.loginIncorrectText);
+        text.setText(getIntent().getStringExtra("text"));
 
         Button loginButton = (Button) findViewById(R.id.btnLoginFailed);
         final EditText username = (EditText) findViewById(R.id.loginUsernameLoginFailed);
@@ -30,22 +36,37 @@ public class LoginFailedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 JSONObject urlParameters = new JSONObject();
                 try {
+                    Intent intent;
                     URL url = new URL("http://10.0.2.2:8080/hangman/authorize");
-                    urlParameters.put("username", username.getText().toString());
-                    urlParameters.put("password", password.getText().toString());
+                    String un = username.getText().toString();
+                    String pw = password.getText().toString();
+                    if (un.equals("")){
+                        intent = new Intent(LoginFailedActivity.this, LoginFailedActivity.class);
+                        intent.putExtra("text", "username is empty");
+                        startActivity(intent);
+                        finish();
+                    }
+                    if (pw.equals("")){
+                        intent = new Intent(LoginFailedActivity.this, LoginFailedActivity.class);
+                        intent.putExtra("text", "password is empty");
+                        startActivity(intent);
+                        finish();
+                    }
+                    urlParameters.put("username", un);
+                    urlParameters.put("password", pw);
                     NetworkHandler networkHandler = new NetworkHandler(urlParameters, url);
                     Object[] ObjectTmp = new Object[1];
                     AsyncTask taskResult = networkHandler.execute(ObjectTmp);
                     Object result = taskResult.get();
                     String resultStr = result.toString();
 
-                    Intent intent;
                     if (resultStr.equals("true")) {
                         intent = new Intent(LoginFailedActivity.this, NewGameActivity.class);
                         startActivity(intent);
                         finish();
-                    } else if(resultStr.equals("false")){
+                    } else {
                         intent = new Intent(LoginFailedActivity.this, LoginFailedActivity.class);
+                        intent.putExtra("text", "username or password is incorrect");
                         startActivity(intent);
                         finish();
                     }

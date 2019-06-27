@@ -1,15 +1,12 @@
 package com.example.game.hangman;
 
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.Button;
-
-/**
- * Created by Vasko on 6/22/2017.
- */
 
 public class LetterAdapter extends BaseAdapter {
     private String[] letters;
@@ -41,6 +38,7 @@ public class LetterAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Button letterBtn;
+
         if (convertView == null) {
             //inflate the button layout
             letterBtn = (Button)letterInf.inflate(R.layout.letter, parent, false);
@@ -48,7 +46,9 @@ public class LetterAdapter extends BaseAdapter {
             letterBtn = (Button) convertView;
         }
         //set the text to this letter
+        letterBtn.setBackgroundResource(R.drawable.custom_button);
         letterBtn.setText(letters[position]);
+        letterBtn.setTextColor(Color.WHITE);
         return letterBtn;
     }
 }

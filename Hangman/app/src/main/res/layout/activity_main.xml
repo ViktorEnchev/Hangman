@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.game.hangman.activity.MainActivity">
+    tools:context="com.example.game.hangman.activity.MainActivity"
+    android:background="@drawable/castle">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,6 +18,7 @@
             android:layout_height="wrap_content"
             android:text="Hangman"
             android:textAlignment="center"
+            android:textColor="#FFFFFF"
             android:textSize="36sp"
             android:textStyle="bold" />
 
@@ -30,22 +32,31 @@
 
             <Button
                 android:id="@+id/btnLoginMain"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:background="@drawable/custom_button"
+                android:stateListAnimator="@null"
+                android:textColor="#FFFFFF"
                 android:text="Log in"
                 android:textSize="24sp" />
 
             <Button
                 android:id="@+id/btnRegisterMain"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:background="@drawable/custom_button"
+                android:stateListAnimator="@null"
+                android:textColor="#FFFFFF"
                 android:text="Register"
                 android:textSize="24sp" />
 
             <Button
                 android:id="@+id/btnExitMain"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:background="@drawable/custom_button"
+                android:stateListAnimator="@null"
+                android:textColor="#FFFFFF"
                 android:text="Exit"
                 android:textSize="24sp" />
 
