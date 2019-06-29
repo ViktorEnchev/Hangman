@@ -37,7 +37,7 @@
                 android:background="@drawable/custom_button"
                 android:stateListAnimator="@null"
                 android:textColor="#FFFFFF"
-                android:text="Log in"
+                android:text="Login"
                 android:textSize="24sp" />
 
             <Button

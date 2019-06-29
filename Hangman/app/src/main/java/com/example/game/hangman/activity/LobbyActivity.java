@@ -47,10 +47,10 @@ public class LobbyActivity extends AppCompatActivity {
 
         bodyParts[0] = (ImageView) findViewById(R.id.head);
         bodyParts[1] = (ImageView) findViewById(R.id.body);
-        bodyParts[2] = (ImageView) findViewById(R.id.arm1);
-        bodyParts[3] = (ImageView) findViewById(R.id.arm2);
-        bodyParts[4] = (ImageView) findViewById(R.id.leg1);
-        bodyParts[5] = (ImageView) findViewById(R.id.leg2);
+        bodyParts[2] = (ImageView) findViewById(R.id.armRight);
+        bodyParts[3] = (ImageView) findViewById(R.id.armLeft);
+        bodyParts[4] = (ImageView) findViewById(R.id.legRight);
+        bodyParts[5] = (ImageView) findViewById(R.id.legLeft);
 
         for (int i = 0; i < 6; i++) {
             bodyParts[i].setVisibility(View.INVISIBLE);

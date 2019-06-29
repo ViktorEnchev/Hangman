@@ -34,18 +34,6 @@ public class LoginActivity extends AppCompatActivity {
                     URL url = new URL("http://10.0.2.2:8080/hangman/authorize");
                     String un = username.getText().toString();
                     String pw = password.getText().toString();
-                    if (un.equals("")){
-                        intent = new Intent(LoginActivity.this, LoginFailedActivity.class);
-                        intent.putExtra("text", "username is empty");
-                        startActivity(intent);
-                        finish();
-                    }
-                    if (pw.equals("")){
-                        intent = new Intent(LoginActivity.this, LoginFailedActivity.class);
-                        intent.putExtra("text", "password is empty");
-                        startActivity(intent);
-                        finish();
-                    }
                     urlParameters.put("username", un);
                     urlParameters.put("password", pw);
                     NetworkHandler networkHandler = new NetworkHandler(urlParameters, url);
