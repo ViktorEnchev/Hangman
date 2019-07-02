@@ -9,10 +9,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
- * Created by Vasko on 6/24/2017.
- */
-
 public class WordHandler extends AsyncTask {
     private URL url;
 

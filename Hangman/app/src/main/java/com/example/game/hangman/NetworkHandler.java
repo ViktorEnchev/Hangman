@@ -12,9 +12,6 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
- * Created by Vasko on 6/24/2017.
- */
 
 public class NetworkHandler extends AsyncTask {
 
